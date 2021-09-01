@@ -1,0 +1,71 @@
+※스프링 부트 시작하기
+
+jpa_master 요약 : 
+1) JPA 테스트에 대한 요약
+	/jpa_master/src/main/java/kr/co/jframework/jpa/BoardJPA.java
+	/jpa_master/src/test/java/kr/co/jframework/JpaMasterApplicationTests.java
+	
+2) 뷰 리졸버를 스프링부트에서 따로 설정하여 /WEB-INF/views/에 따로 설정
+	/jpa_master/src/main/resources/application.properties
+	
+3) 리턴값이 ModelAndView, String, void 형으로 받는 예제 
+	/jpa_master/src/main/java/kr/co/jframework/controller/MainController.java
+	
+
+===================프로젝트 생성===================
+Service URL 	: http://start.spring.io
+Name 			: jpa_master
+Type 			: Maven 
+Packaging 		: War
+Java Version 	: 1.8
+Language 		: JAVA
+Group 			: kr.co.jframework
+Artifact 		: jpa_master
+Version 		: 0.0.1-SNAPSHOT
+Description		: -
+Package 		: kr.co.jframework		
+
+===================이번 챕터에 대한 설명===================
+
+
+스프링부트에서 따로 타임리프를 사용하지않고 JSP를 사용하기위해서는 뷰 리졸버를 설정해야한다. 
+
+
+
+실습 환경
+1) application.properties 에 뷰-리졸버 설정 방법
+	#서버포트 설정
+	server.port=8888
+
+	#뷰-리졸버 설정
+	spring.mvc.view.prefix = /WEB-INF/views/
+	spring.mvc.view.suffix= .jsp
+	
+2)  pom.xml에 JSP를 읽어드릴 수 있도록 의존성 주입 추가
+
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-jasper</artifactId>
+		<scope>provided</scope>
+	</dependency>
+
+3) 컨트롤러 추가 제작
+	/src/main/java/kr/co/jframework/controller/MainController.java
+	
+4) JPA 관련 jUnit Test
+	BoardJPA.java에서 CrudRepository를 상속받은 후 해당  
+
+5) 
+
+6) 
+	
+
+
+7) 
+
+8) 
+	
